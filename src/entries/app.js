@@ -11,7 +11,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from '../pages/components/header';
 import NotFound from '../pages/components/not-found';
@@ -61,6 +61,7 @@ render(
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/videos" component={Videos} />
+          <Redirect from="/v" to="/videos"/>
           <Route exact path="/Contacto" component={Contacto} />
           <Route component={NotFound} />
         </Switch>
