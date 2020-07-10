@@ -1,5 +1,5 @@
 const express = require('express');
-
+const App = require('../dist/ssr/app')
 const app = express();
 
 app.get('*', (req, res) => {
