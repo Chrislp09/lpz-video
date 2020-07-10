@@ -11,9 +11,10 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { BrowserRouter, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 
 import Header from '../pages/components/header';
+import NotFound from '../pages/components/not-found';
 
 // function logger({ getState, dispatch}) {
 //   return (next) => {
@@ -57,9 +58,12 @@ render(
     <Provider store={store}>
       <Fragment>
         <Header />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/videos" component={Videos} />
-        <Route exact path="/Contacto" component={Contacto} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/videos" component={Videos} />
+          <Route exact path="/Contacto" component={Contacto} />
+          <Route component={NotFound} />
+        </Switch>
       </Fragment>
     </Provider>
   </BrowserRouter>
