@@ -30,7 +30,7 @@ class Home extends Component {
   }
   componentDidMount() {
     const search = this.props.location.search;
-    if(search) {
+    if (search) {
       const id = search.split('=')[1];
       this.handleOpenModal(id);
     }
